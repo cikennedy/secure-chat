@@ -25,6 +25,7 @@ const ChannelListContainer = () => {
   return (
     <>
         <SideBar />
+        {/* clc component */}
     </>
   )
 }
