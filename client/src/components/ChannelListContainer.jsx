@@ -16,18 +16,25 @@ const SideBar = () => (
         <div className='channel-list__sidebar__icon2'>
             <div className='icon1__inner'>
                 <img src={LogOutIcon} alt="Log Out" width="30" />
+                <img src={LogOutIcon} alt="Log Out" width="30" />
             </div>
         </div>
     </div>
 )
 
+const CompanyHeader = () => (
+    <div>
+        
+    </div>
+)
+
 const ChannelListContainer = () => {
-  return (
-    <>
-        <SideBar />
-        {/* clc component */}
-    </>
-  )
+    return (
+        <>
+            <SideBar />
+            {/* clc component */}
+        </>
+    )
 }
 
 export default ChannelListContainer
