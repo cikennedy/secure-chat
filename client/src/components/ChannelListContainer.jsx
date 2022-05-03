@@ -23,8 +23,8 @@ const SideBar = () => (
 )
 
 const CompanyHeader = () => (
-    <div>
-        
+    <div className="channel-list__header">
+        <p className='channel-list__header__text'>Pager</p>
     </div>
 )
 
@@ -32,7 +32,9 @@ const ChannelListContainer = () => {
     return (
         <>
             <SideBar />
-            {/* clc component */}
+            <div className='channel-list__list__wrapper'>
+                <CompanyHeader />
+            </div>
         </>
     )
 }
