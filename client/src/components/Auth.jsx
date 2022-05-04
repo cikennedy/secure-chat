@@ -5,9 +5,15 @@ import axios from 'axios';
 import signUpImage from '../assets/signup.jpeg'
 
 const Auth = () => {
+    const [isSignUp, setIsSignUp] = useState(false);
+
   return (
     <div className='auth__form-container'>
-        <div></div>
+        <div className='auth__form-container_fields'>
+            <div className='auth__form-container_fields-content'>
+                <p>{isSignUp ? 'Sign Up' : 'Sign In'}</p>
+            </div>
+        </div>
     </div>
   )
 }
