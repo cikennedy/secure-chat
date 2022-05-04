@@ -29,6 +29,28 @@ const Auth = () => {
                             />
                         </div>
                     )}
+                    <div className='auth__form-container_fields-content_input'>
+                            <label htmlFor='username'>Username</label>
+                            <input 
+                            name='username'
+                            type='text'
+                            placeholder='Username'
+                            onChange={handleChange}
+                            required
+                            />
+                        </div>
+                        {isSignUp && (
+                        <div className='auth__form-container_fields-content_input'>
+                            <label htmlFor='phoneNumber'>Phone Number</label>
+                            <input 
+                            name='phoneNumber'
+                            type='text'
+                            placeholder='Phone Number'
+                            onChange={handleChange}
+                            required
+                            />
+                        </div>
+                    )}
                 </form>
             </div>
         </div>
