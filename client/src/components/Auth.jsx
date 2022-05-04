@@ -103,6 +103,9 @@ const Auth = () => {
                 </div>
             </div>
         </div>
+        <div className='auth__form-container_image'>
+            <img src={signUpImage} alt="sign up"/>
+        </div>
     </div>
   )
 }
