@@ -45,6 +45,7 @@ const Auth = () => {
             cookies.set('hashedPassword', hashedPassword);
         }
 
+        window.location.reload();
     }
 
     const switchMode = () => {
@@ -55,7 +56,7 @@ const Auth = () => {
     <div className='auth__form-container'>
         <div className='auth__form-container_fields'>
             <div className='auth__form-container_fields-content'>
-                <p>{isSignUp ? 'Sign Up' : 'Sign In'}</p>
+                <p>{isSignUp ? 'Sign Up' : 'Log In'}</p>
                 <form onSubmit={handleSubmit}>
                     {isSignUp && (
                         <div className='auth__form-container_fields-content_input'>
@@ -126,7 +127,7 @@ const Auth = () => {
                     </div>
                     )}
                     <div className='auth__form-container_fields-content_button'>
-                            <button>{isSignUp ? "Sign Up" : 'Sign In'}</button>
+                            <button>{isSignUp ? "Sign Up" : 'Log In'}</button>
                     </div>
                 </form>
                 <div className='auth__form-container_fields-account'>
@@ -136,7 +137,7 @@ const Auth = () => {
                         : "Don't have an account? "
                     }
                     <span onClick={switchMode}>
-                        {isSignUp ? "Sign In" : "Sign Up"}
+                        {isSignUp ? "Log In" : "Sign Up"}
                     </span>
                     </p>
                 </div>
