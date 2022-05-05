@@ -3,7 +3,7 @@ import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
-import SecureChatIcon from '../assets/secure-chat.png';
+import SecureChatIcon from '../assets/bubble-chat.png';
 import LogOutIcon from '../assets/logout.png';
 
 const SideBar = () => (
