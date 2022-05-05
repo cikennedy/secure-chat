@@ -7,9 +7,11 @@ import { ChannelListContainer, ChannelContainer, Auth } from './components';
 
 import './App.css';
 
+require("dotenv").config();
+
 const cookies = new Cookies();
 
-const apiKey = '9dx8sq8u6dh3';
+const apiKey = process.env.STREAM_API_KEY;
 const authToken = cookies.get("token");
 
 const client = StreamChat.getInstance(apiKey);
