@@ -41,7 +41,7 @@ const App = () => {
             <ChannelListContainer 
               isCreating={isCreating}
               setIsCreating={setIsCreating}
-              isEditing={isEditing}
+              setCreateType={setCreateType}
               setIsEditing={setIsEditing}
             />
             <ChannelContainer 
@@ -49,6 +49,7 @@ const App = () => {
               setIsCreating={setIsCreating}
               isEditing={isEditing}
               setIsEditing={setIsEditing}
+              createType={createType}
             />
         </Chat>
     </div>
