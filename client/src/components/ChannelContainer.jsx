@@ -23,7 +23,7 @@ const ChannelContainer = ({ isCreating, setIsCreating, isEditing, setIsEditing, 
     )
   }
 
-  const EmptyState = () = (
+  const EmptyState = () => (
     <div className='channel-empty__container'>
       <p className='channel-empty__first'>Beginning of chat history: </p>
       <p className='channel-empty__second'>Send messages with links, attachments, etc.!</p>
