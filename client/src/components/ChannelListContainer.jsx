@@ -6,7 +6,9 @@ import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
 import SecureChatIcon from '../assets/bubble-chat.png';
 import LogOutIcon from '../assets/logout.png';
 
-const SideBar = () => (
+const cookies = new Cookies();
+
+const SideBar = ({ logout }) => (
     <div className='channel-list__sidebar'>
         <div className='channel-list__sidebar__icon1'>
             <div className='icon1__inner'>
@@ -15,7 +17,7 @@ const SideBar = () => (
         </div>
         <div className='channel-list__sidebar__icon2'>
             <div className='icon1__inner'>
-                <img src={LogOutIcon} alt="Log Out" width="30" />
+                <img src={LogOutIcon} alt="Log Out" width="30" onClick={logout} />
                 {/* <img src={LogOutIcon} alt="Log Out" width="30" /> */}
             </div>
         </div>
@@ -31,7 +33,15 @@ const CompanyHeader = () => (
 const ChannelListContainer = () => {
 
     const logout = () => {
+        
+        cookies.remove('username');
+        cookies.remove('fullName');
+        cookies.remove('userId');
+        cookies.remove('phoneNumber');
+        cookies.remove('avatarURL');
+        cookies.remove('hashedPassword');
 
+        window.location.reload();
     }
 
     return (
