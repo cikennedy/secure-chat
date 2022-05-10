@@ -46,7 +46,7 @@ const ChannelListContainer = () => {
 
     return (
         <>
-            <SideBar />
+            <SideBar logout={logout}/>
             <div className='channel-list__list__wrapper'>
                 <CompanyHeader />
                 <ChannelSearch />
