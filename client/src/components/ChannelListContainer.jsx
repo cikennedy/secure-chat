@@ -32,6 +32,8 @@ const CompanyHeader = () => (
 
 const ChannelListContainer = () => {
 
+    const { client } = useChatContext();
+
     const logout = () => {
         
         cookies.remove('username');
