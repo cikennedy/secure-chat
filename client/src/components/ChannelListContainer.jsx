@@ -30,7 +30,7 @@ const CompanyHeader = () => (
     </div>
 )
 
-const ChannelListContainer = () => {
+const ChannelListContainer = ({ isCreating, setIsCreating, setCreateType, setIsEditing }) => {
 
     const { client } = useChatContext();
 
