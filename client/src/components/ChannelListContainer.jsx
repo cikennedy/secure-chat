@@ -59,6 +59,10 @@ const ChannelListContainer = ({ isCreating, setIsCreating, setCreateType, setIsE
                     <TeamChannelList 
                         {...listProps}
                         type="team"
+                        isCreating={isCreating}
+                        setIsCreating={setIsCreating}
+                        setCreateType={setCreateType}
+                        setIsEditing={setIsEditing}
                     />
                 )}
                 Preview={(previewProps) => (
@@ -81,6 +85,10 @@ const ChannelListContainer = ({ isCreating, setIsCreating, setCreateType, setIsE
                     <TeamChannelPreview 
                     {...previewProps}
                     type="messaging"
+                    isCreating={isCreating}
+                    setIsCreating={setIsCreating}
+                    setCreateType={setCreateType}
+                    setIsEditing={setIsEditing}
                     />
                 )}
                 />
