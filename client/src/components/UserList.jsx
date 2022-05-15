@@ -3,9 +3,31 @@ import { Avatar, useChatChannel } from 'stream-chat-react';
 
 import { InviteIcon } from '../assets';
 
+const ListContainer = ({ children }) => {
+    return (
+        <div className='user-list__container'>
+            <div className='user-list__header'>
+                <p>User</p>
+                <p>Invite</p>
+                {children}
+            </div>
+        </div>
+    )
+}
+
+const UserItem = () => {
+    return (
+        <div className='user-item__wrapper'>
+            <div className='user-item__name-wrapper'>
+                <Avatar />
+            </div>
+        </div>
+    )
+}
+
 const UserList = () => {
   return (
-    <div>UserList</div>
+    <ListContainer>UserList</ListContainer>
   )
 }
 
