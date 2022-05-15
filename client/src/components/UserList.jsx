@@ -28,13 +28,13 @@ const UserItem = () => {
 const UserList = () => {
     const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-      first
+    // useEffect(() => {
+    //   first
     
-      return () => {
-        second
-      }
-    }, [third])
+    //   return () => {
+    //     second
+    //   }
+    // }, [third])
     
 
   return (
