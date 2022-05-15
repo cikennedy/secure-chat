@@ -28,6 +28,15 @@ const UserItem = () => {
 const UserList = () => {
     const [users, setUsers] = useState([]);
 
+    useEffect(() => {
+      first
+    
+      return () => {
+        second
+      }
+    }, [third])
+    
+
   return (
     <ListContainer>UserList</ListContainer>
   )
