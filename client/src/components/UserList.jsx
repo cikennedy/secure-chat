@@ -26,6 +26,8 @@ const UserItem = () => {
 }
 
 const UserList = () => {
+    const [users, setUsers] = useState([]);
+
   return (
     <ListContainer>UserList</ListContainer>
   )
