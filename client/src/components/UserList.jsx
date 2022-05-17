@@ -21,7 +21,9 @@ const UserItem = ({ user, setSelectedUsers }) => {
     const handleSelect = () => {
         if(selected) {
             setSelectedUsers((prevUsers) => prevUsers.filter((prevUser) => prevUser !== user.id))
-        }
+        } else {
+            setSelectedUsers((prevUsers) => [...prevUsers, user.id])
+        } 
 
         setSelected((prevSelected) => !prevSelected);
     }
@@ -42,6 +44,7 @@ const UserList = ({ setSelectedUsers }) => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(false);
     const [listEmpty, setlistEmpty] = useState(false);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
       const getUsers = async () => {
@@ -62,7 +65,7 @@ const UserList = ({ setSelectedUsers }) => {
                 setlistEmpty(true);
               }
           } catch (error) {
-              console.log(error);
+              setError(true);
           }
           setLoading(false);
       }
@@ -70,6 +73,15 @@ const UserList = ({ setSelectedUsers }) => {
       if(client) getUsers();
     }, [])
     
+    if(error) {
+        return (
+            <ListContainer>
+                <div className='user-list__message'>
+                    Error loading, please try again. 
+                </div>
+            </ListContainer>
+        )
+    }
 
   return (
     <ListContainer>
