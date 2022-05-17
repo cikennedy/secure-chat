@@ -16,11 +16,15 @@ const ListContainer = ({ children }) => {
 }
 
 const UserItem = ({ user }) => {
+    const [selected, setSelected] = useState(false);
+
     return (
         <div className='user-item__wrapper'>
             <div className='user-item__name-wrapper'>
                 <Avatar image={user.image} name={user.fullName || user.id} size={32} />
+                <p className='user-item__name'>{user.fullName || user.id}</p>
             </div>
+            {selected ? <InviteIcon /> : <div className='user-item__invite-empty' />}
         </div>
     )
 }
