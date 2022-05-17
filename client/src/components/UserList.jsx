@@ -18,8 +18,12 @@ const ListContainer = ({ children }) => {
 const UserItem = ({ user }) => {
     const [selected, setSelected] = useState(false);
 
+    const handleSelect = () => {
+        setSelected((prevSelected) => !prevSelected);
+    }
+
     return (
-        <div className='user-item__wrapper'>
+        <div className='user-item__wrapper' onClick={handleSelect}>
             <div className='user-item__name-wrapper'>
                 <Avatar image={user.image} name={user.fullName || user.id} size={32} />
                 <p className='user-item__name'>{user.fullName || user.id}</p>
