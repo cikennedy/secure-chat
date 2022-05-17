@@ -24,7 +24,9 @@ const ChannelNameInput = ({ channelName='', setChannelName }) => {
 }
 
 const CreateChannel = ({ createType, setIsCreating }) => {
+  const { client, setActiveChannel } = useChatContext();
   const [channelName, setChannelName] = useState('');
+  const [selectedUsers, setSelectedUsers] = useState([client.userID || '']);
 
   return (
     <div className="create-channel__container">
@@ -33,7 +35,7 @@ const CreateChannel = ({ createType, setIsCreating }) => {
         <CloseCreateChannel setIsCreating={setIsCreating} />
       </div>
       {createType === 'team' && <ChannelNameInput channelName={channelName} setChannelName={setChannelName} />}
-      
+      <UserList setSelectedUsers={setSelectedUsers} />
     </div>
   )
 }

@@ -33,7 +33,7 @@ const UserItem = ({ user }) => {
     )
 }
 
-const UserList = () => {
+const UserList = ({ setSelectedUsers }) => {
     const { client } = useChatContext();
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -73,7 +73,7 @@ const UserList = () => {
             Loading Users...
         </div> : (
             users?.map((user, i) => (
-                <UserItem index={i} key={user.id} user={user} />
+                <UserItem index={i} key={user.id} user={user} setSelectedUsers={setSelectedUsers} />
             ))
         )}
     </ListContainer>
