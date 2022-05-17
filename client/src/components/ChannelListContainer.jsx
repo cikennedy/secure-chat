@@ -38,7 +38,7 @@ const customChannelMessagingFilter = (channels) => {
     return channels.filter((channel) => channel.type === 'messaging')
 }
 
-const ChannelListContainer = ({ isCreating, setIsCreating, setCreateType, setIsEditing }) => {
+const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEditing }) => {
 
     const { client } = useChatContext();
 
@@ -103,6 +103,10 @@ const ChannelListContainer = ({ isCreating, setIsCreating, setCreateType, setIsE
             </div>
         </>
     )
+}
+
+const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditing }) => {
+
 }
 
 export default ChannelListContainer
