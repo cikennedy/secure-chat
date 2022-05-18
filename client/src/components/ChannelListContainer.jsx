@@ -54,6 +54,8 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
         window.location.reload();
     }
 
+    const filters = { members: { $in: [client.userID] } };
+
     return (
         <>
             <SideBar logout={logout}/>
@@ -61,7 +63,7 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
                 <CompanyHeader />
                 <ChannelSearch />
                 <ChannelList 
-                filters={{}}
+                filters={filters}
                 channelRenderFilterFn={customChannelTeamFilter}
                 List={(listProps) => (
                     <TeamChannelList 
@@ -81,7 +83,7 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
                 )}
                 />
                 <ChannelList 
-                filters={{}}
+                filters={filters}
                 channelRenderFilterFn={customChannelMessagingFilter}
                 List={(listProps) => (
                     <TeamChannelList 
