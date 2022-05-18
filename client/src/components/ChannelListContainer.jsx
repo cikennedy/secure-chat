@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 
@@ -106,7 +106,7 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
 }
 
 const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditing }) => {
-
+    const [toggleContainer, setToggleContainer] = useState(false);
 }
 
 export default ChannelListContainer
