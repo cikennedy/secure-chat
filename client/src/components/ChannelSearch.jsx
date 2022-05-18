@@ -4,12 +4,29 @@ import { useChatContext } from 'stream-chat-react';
 import { SearchIcon } from '../assets';
 
 const ChannelSearch = () => {
+    const { client, setActiveChannel } = useChatContext();
     const [query, setQuery] = useState('');
     const [loading, setLoading] = useState(false);
+    const [teamChannels, setTeamChannels] = useState([]);
+    const [directChannels, setDirectChannels] = useState([]);
 
     const getChannels = async (text) => {
         try {
-            // To-Do: fetch channels 
+            const channelResponse = client.queryChannels({
+                type: 'team',
+                name: { $autocomplete: text },
+                members: { $in: [client.userID] }
+            });
+            const userResponse = client.queryUsers({
+                id: { $ne: client.userID },
+                name: { $autocomplete: text }
+            });
+
+            const [channels, { users }] = await Promise.all([channelResponse, userResponse]);
+
+            if(channels.length) setTeamChannels(channels);
+            if(users.length) setDirectChannels(users);
+
         } catch (error) {
             setQuery('');
         }
