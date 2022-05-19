@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 5000;
 
 require("dotenv").config();
 
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const twilioClient = require("twilio")(accountSid, authToken);
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
